@@ -22,7 +22,7 @@ def pobierz_czas_alarmu():
 def wyswietlanie():
     obecna = datetime.datetime.now().strftime("%H:%M:%S")
     l2.config(text = obecna)
-    l2.after(1, wyswietlanie)
+    l2.after(100, wyswietlanie)
         
 root = tkinter.Tk()
 root.title("Alarm Michała")
