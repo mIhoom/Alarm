@@ -9,12 +9,12 @@ def alarm(ustaw_czas_alarmu):
         time.sleep(1)
         czas = datetime.datetime.now()
         aktualny_czas = czas.strftime("%H:%M:%S")
-        print('Aktualny czas: ' + str (aktualny_czas), "," 'Czas alarmu: ', ustaw_czas_alarmu)
+        print('Aktualny czas: ' + str (aktualny_czas),",", 'Czas alarmu: ',ustaw_czas_alarmu)
         if aktualny_czas == ustaw_czas_alarmu:
             winsound.PlaySound("Music.wav",winsound.SND_ASYNC)
             print("Alarm!!!")
             break
- 
+
 def pobierz_czas_alarmu():
     ustaw = f"{godz.get()}:{min.get()}:{sek.get()}"
     alarm(ustaw)
@@ -22,7 +22,7 @@ def pobierz_czas_alarmu():
 def wyswietlanie():
     obecna = datetime.datetime.now().strftime("%H:%M:%S")
     l2.config(text = obecna)
-    l2.after(200, wyswietlanie)
+    l2.after(1, wyswietlanie)
         
 root = tkinter.Tk()
 root.title("Alarm Michała")
@@ -41,7 +41,6 @@ l3 = tkinter.Label(root, text = 'Godzina alarmu: \n godz. min. sek.', font = ('C
 l3.place(x = 10 , y = 81)
 l4 = tkinter.Label(root, text = 'Podaj wszystkie wartości (format 24 godz.)', font = ('Calibri', 8), width = '40')
 l4.place(x = 48, y = 115)
-
 egodziny = tkinter.Entry(root, textvariable = godz, bg = 'white', fg = 'black', font = 15, width = 4)
 egodziny.place(x = 97, y = 85) 
 eminuty = tkinter.Entry(root, textvariable = min, bg = 'white', fg = 'black', font = 15, width = 4)

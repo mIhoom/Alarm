@@ -1,4 +1,3 @@
-from sys import breakpointhook
 import tkinter
 from tkinter import *
 import time
@@ -19,7 +18,6 @@ def alarm(ustaw_czas_alarmu):
 def pobierz_czas_alarmu():
     ustaw = f"{godz.get()}:{min.get()}:{sek.get()}"
     alarm(ustaw)
-
 
 def wyswietlanie():
     obecna = datetime.datetime.now().strftime("%H:%M:%S")
